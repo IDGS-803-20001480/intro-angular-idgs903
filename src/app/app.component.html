@@ -1,0 +1,21 @@
+
+<div class="container">
+  
+<h1>Hola</h1>
+<p>
+  {{grupo}}
+</p>
+  <div class="row">
+    <div>EL doble de 3 es{{duplicarN(3)}}</div>
+
+<div><b>Matricula:</b>{{alumnos.matricula}}</div>
+<div><b>nombre:</b>{{alumnos.nombre }}</div>
+<div><b>fecha Nacimiento:</b>{{alumnos.fechaNacimiento | date: "dd-MM-yy"}}</div>
+<div><b>pago:</b>{{alumnos.pago | currency}}</div>
+  </div>
+</div>
+
+<hr>
+<app-grupo></app-grupo>
+<app-ievn></app-ievn>
+<app-ievn2></app-ievn2>
