@@ -1,12 +1,28 @@
 <p>ievn2 works!</p>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <table class="table" *ngIf="alumnos.length"> <!-- *ngIf="alumnos.length" sirve para que no se muestre la tabla si no hay datos -->
+<div class="card">
+    <div class="card-header">
+        Lista de Alumnos
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-2"> Filtar por:</div>
+            <div class="col-md-4">
+                <!-- enlace de datos bidireccional en ingles two way data binding -->
+                <input [(ngModel)]="listFilter" name="filter" class="form-control" type="text">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Filtro: {{listFilter}}</h3>
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table" *ngIf="alumnos.length">
+                <!-- *ngIf="alumnos.length" sirve para que no se muestre la tabla si no hay datos -->
                 <thead>
                     <tr>
                         <th>
-                            <button class="btn btn-primary">Mostrar Imagen</button>
+                            <button (click)="showImage()" class="btn btn-primary">Mostrar Imagen</button>
                         </th>
                         <th>Matricula</th>
                         <th>Nombre</th>
@@ -17,12 +33,16 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let alumno of alumnos">
+                        <!-- enlace de datos unidireccional en ingles one way data binding --> 
+                        <!-- *ngIf="muestraImg" sirve para que no se muestre la imagen si no se ha dado click en el boton -->
+                        <!-- *ngFor="let alumno of alumnos" sirve para recorrer el arreglo alumnos -->
+                        <td><img *ngIf="muestraImg" [src]="alumno.foto" [title]="alumno.nombre" [style.width.px]="imageWidth"
+                                [style.margin.px]="imageMargin"></td>
                         <td>{{alumno.matricula}}</td>
                         <td>{{alumno.nombre}}</td>
                         <td>{{alumno.edad}}</td>
                         <td>{{alumno.correo}}</td>
                         <td>{{alumno.pago | currency}}</td>
-                        <td><img [src]="alumno.foto"></td>
                     </tr>
                 </tbody>
             </table>

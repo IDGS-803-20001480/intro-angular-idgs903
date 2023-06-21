@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class Ievn2Component {
 
    // alumnos: any[] = [];
+   imageWidth: number = 50;
+   imageMargin: number = 2;
+   muestraImg: boolean = false;
+   listFilter: string = '';
 
-
+  showImage():void {
+    this.muestraImg = !this.muestraImg; // Esta funcion cambia el valor de muestraImg a su contrario
+  }
     alumnos: any[] = [
       {
         "matricula": 2016630401,
