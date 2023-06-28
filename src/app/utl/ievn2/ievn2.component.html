@@ -1,4 +1,4 @@
-<p>ievn2 works!</p>
+
 <div class="card">
     <div class="card-header">
         Lista de Alumnos
@@ -29,10 +29,11 @@
                         <th>Edad</th>
                         <th>Correo</th>
                         <th>Pago</th>
+                        <th>Calificacion</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let alumno of alumnos">
+                    <tr *ngFor="let alumno of alumnos |alumnosFilter:listFilter" >
                         <!-- enlace de datos unidireccional en ingles one way data binding --> 
                         <!-- *ngIf="muestraImg" sirve para que no se muestre la imagen si no se ha dado click en el boton -->
                         <!-- *ngFor="let alumno of alumnos" sirve para recorrer el arreglo alumnos -->
@@ -43,6 +44,7 @@
                         <td>{{alumno.edad}}</td>
                         <td>{{alumno.correo}}</td>
                         <td>{{alumno.pago | currency}}</td>
+                        <td>8</td>
                     </tr>
                 </tbody>
             </table>

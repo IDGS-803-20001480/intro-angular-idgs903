@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { SumaComponent } from './utl/formularios/suma/suma.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperasModule } from './utl/formularios/operas/operas.module';
+import { MenuComponent } from './utl/menu/menu.component';
+import { AlumnosFilterPipe } from './utl/alumnos-filter.pipe';
 //import { OperasBasComponent } from './utl/formularios/operas-bas/operas-bas.component';
 
 /* import {MatInputModule} from '@angular/material/input';
@@ -21,7 +23,9 @@ import {MatIconModule} from '@angular/material/icon'; */
     idgsComponent,
     ievnComponent,
     Ievn2Component,
-    SumaComponent
+    SumaComponent,
+    MenuComponent,
+    AlumnosFilterPipe
   ],
   imports: [
     BrowserModule,
