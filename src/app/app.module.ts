@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { idgsComponent } from './utl/idgs.component';
 import { ievnComponent } from './utl/ievn.component';
 import { Ievn2Component } from './utl/ievn2/ievn2.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SumaComponent } from './utl/formularios/suma/suma.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OperasModule } from './utl/formularios/operas/operas.module';
 import { MenuComponent } from './utl/menu/menu.component';
 import { AlumnosFilterPipe } from './utl/alumnos-filter.pipe';
+import { AlumnoReactiveComponent } from './formularios/alumno-reactive/alumno-reactive.component';
+import { AppRoutingModule } from './app.routing.module';
 //import { OperasBasComponent } from './utl/formularios/operas-bas/operas-bas.component';
 
 /* import {MatInputModule} from '@angular/material/input';
@@ -25,13 +27,16 @@ import {MatIconModule} from '@angular/material/icon'; */
     Ievn2Component,
     SumaComponent,
     MenuComponent,
-    AlumnosFilterPipe
+    AlumnosFilterPipe,
+    AlumnoReactiveComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    OperasModule //importa el modulo de operas para que se pueda usar en el app.component.html
+    OperasModule, //importa el modulo de operas para que se pueda usar en el app.component.html
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
